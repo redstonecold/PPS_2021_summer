@@ -1,25 +1,24 @@
-testcase = int(input())
+'''
+https://leetcode.com/problems/assign-cookies/submissions/ 
+testcase 문제가 있는듯?
+maximize한 output값을 출력하라 했는데 걸리는 부분이 있음
+'''
+class Solution(object):
+    def findContentChildren(self, g, s):
+        """
+        :type g: List[int]
+        :type s: List[int]
+        :rtype: int
+        """
+        snum = sum(s)
+        g = sorted(g)
+        count = 0
+        for i in range(len(g)) :
+            if g[i] > snum : break
+            snum -= g[i]
+            count += 1
+        return count
 
-ans = []
-for j in range(testcase) :
-    inputlist = input().split()
-    for i in range(len(inputlist)) :
-        inputlist[i] = int(inputlist[i])
-    # print(inputlist)
-
-    sum = 0
-    for i in range(1,inputlist[0]+1) :
-        sum = sum + inputlist[i]
-    avg = sum / inputlist[0]
-
-    abavg = 0
-    for i in range(1,inputlist[0]+1) :
-        if inputlist[i] > avg :
-            abavg = abavg + 1
-
-    prc = abavg/inputlist[0] * 100
-    ans.append(prc)
-
-for j in ans :
-    print("%.3f"%j,end='')
-    print('%')
+a = Solution()
+g = [1,2,3]; s = [3]
+print(a.findContentChildren(g,s))
