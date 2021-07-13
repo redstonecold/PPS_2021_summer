@@ -1,3 +1,6 @@
+'''
+https://www.acmicpc.net/problem/2164 
+'''
 from collections import deque
 
 deq = deque(list(range(1, int(input())+1)))
